@@ -1,0 +1,136 @@
+<section class="container-login">
+  <div class="row espaco-login-pc" style="height: 100vh !important">
+    <div class="col-sm-7"></div>
+    <div class="col-sm-5">
+      <div class="container h-100">
+        <div class="d-flex justify-content-center h-100">
+          <div class="user_card">
+            <div class="d-flex justify-content-center">
+              <div class="brand_logo_container">
+                <img
+                  src="/assets/236c4714-0c2a-4b91-ab28-46ec05f06ec0_200x200.png"
+                  class="brand_logo"
+                  alt="Logo"
+                />
+              </div>
+            </div>
+            <div class="d-flex justify-content-center form_container">
+              <form [formGroup]="formLogin" class="form-login" (ngSubmit)="onLogin()">
+                <h1 class="title-form"> Entrar no rollDice </h1>
+                <div class="input-group mb-2">
+
+                  <mat-form-field  appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input matInput [formControlName]="'email'" placeholder="Ex. roll@Dice.com">
+                    <mat-icon matSuffix>face</mat-icon>
+                    <mat-hint>Errors appear instantly!</mat-hint>
+                    <!-- <mat-error *ngIf="email.hasError('email') && !emailFormControl.hasError('required')">
+                      Please; enter; a; valid; email; address
+                    </mat-error>
+                    <mat-error *ngIf="emailFormControl.hasError('required')">
+                      Email; is <strong>required</strong>
+                    </mat-error> -->
+                  </mat-form-field>
+
+                </div>
+                <div class="input-group mb-2">
+                  <mat-form-field appearance="outline">
+                    <mat-label>Enter your password</mat-label>
+                    <input matInput formControlName="password" [type]="hide ? 'password' : 'text'">
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                  </mat-form-field>
+                </div>
+                <div class="form-group"></div>
+                <div class="d-flex justify-content-center mt-3 login_container">
+                  <button mat-raised-button style="width: 100%;" color="primary"> Entrar </button>
+                </div>
+              </form>
+            </div>
+
+            <div class="d-flex justify-content-center links">
+              <a href="#"style="padding-top: 15px;">Esqueceu a senha?</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MOBILE -->
+    <div class="col-sm-12">
+      <div class="container h-100">
+        <div class="d-flex justify-content-center h-100">
+          <div class="user_card">
+            <div class="d-flex justify-content-center">
+              <div class="brand_logo_container">
+                <img
+                  src="../../assets/logo.png"
+                  class="brand_logo"
+                  alt="Logo"
+                />
+              </div>
+            </div>
+            <div class="d-flex justify-content-center form_container">
+              <form [formGroup]="formLogin" class="form-login" >
+                <h1 class="title-form">PAINEL ADMINISTRATIVO</h1>
+                <div class="input-group mb-3">
+                  <div class="input-group-append">
+                    <span
+                      style="background-color: #ffc107 !important;"
+                      class="input-group-text"
+                      ><i style="color:black" class="fas fa-user"></i
+                    ></span>
+                  </div>
+                  <input
+                    type="text"
+                    name=""
+                    class="form-control input_user"
+                    value=""
+                    formControlName="email"
+                    placeholder="Email"
+                  />
+                </div>
+                <div class="input-group mb-2">
+                  <div class="input-group-append">
+                    <span
+                      style="background-color: #ffc107 !important;"
+                      class="input-group-text"
+                      ><i style="color:black" class="fas fa-key"></i
+                    ></span>
+                  </div>
+                  <input
+                    type="password"
+                    name=""
+                    class="form-control input_pass"
+                    value=""
+                    formControlName="password"
+                    placeholder="Senha"
+                  />
+                </div>
+                <div class="form-group"></div>
+                <div class="d-flex justify-content-center mt-3 login_container">
+                  <button
+                    style="background-color: #ffc107 !important; text-color:black;"
+                    type="button"
+                    name="button"
+                    class="btn login_btn"
+                    (click)="onLogin()"
+                  >
+                    <span style="color:black; margin-bottom: 0px;">Login</span>
+                  </button>
+                </div>
+              </form>
+            </div>
+
+            <div class="d-flex justify-content-center links">
+              <a href="#" style="color:#f4e316; padding-top: 15px;"
+                >Esqueceu a senha?</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
